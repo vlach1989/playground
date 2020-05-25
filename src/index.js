@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
-
+import MapZoomBoxRangeRange from "./components/MapZoomBoxRangeRange";
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <div>Ahoj</div>
+    <MapZoomBoxRangeRange/>
   </React.StrictMode>,
   document.getElementById('root')
 );
