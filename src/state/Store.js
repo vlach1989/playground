@@ -5,6 +5,7 @@ import {
 	compose,
 	thunk,
 	reduxBatch,
+	logger
 } from '@gisatcz/ptr-state';
 import {createBrowserHistory, createMemoryHistory} from 'history';
 import {
@@ -26,7 +27,7 @@ function createMiddleware(requestCounter) {
 	const middlewares = [
 		createAsyncMiddleware(requestCounter),
 		thunk,
-		// process.env.NODE_ENV === 'development' && !isServer && logger,
+		process.env.NODE_ENV === 'development' && !isServer && logger,
 	];
 
 	return applyMiddleware(...middlewares.filter((v) => v !== false));
