@@ -2,12 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
-import MapZoomBoxRangeRange from "./components/MapZoomBoxRangeRange";
+import {Provider} from '@gisatcz/ptr-state';
+import createStore from './state/Store';
 
+import '@gisatcz/ptr-core/lib/styles/reset.css';
+import '@gisatcz/ptr-core/lib/styles/base.scss';
+import './index.scss';
+
+import MapZoomBoxRangeRange from "./components/MapZoomBoxRangeRange";
+import MapWrapperPlayground from "./components/MapWrapperPlayground";
+
+const {store} = createStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <MapZoomBoxRangeRange/>
+    {/*<MapZoomBoxRangeRange/>*/}
+    <Provider store={store}>
+        <MapWrapperPlayground/>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
