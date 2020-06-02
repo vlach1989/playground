@@ -2,6 +2,7 @@ import React from 'react';
 import {PresentationMap, MapControls, WorldWindMap, ReactLeafletMap, MapSet, MapSetMap, MapSetPresentationMap, MapWrapper} from "@gisatcz/ptr-maps";
 import {HoverHandler} from "@gisatcz/ptr-core";
 import {connects} from "@gisatcz/ptr-state";
+import wrapper from "./CustomWrapper";
 
 import czGadm from "../../data/czGadm.json";
 
@@ -31,14 +32,12 @@ const layers = [{
 }];
 
 class Presentation extends React.PureComponent {
-    constructor(props) {
-        super(props);
-
+    componentDidMount() {
+        const props = this.props;
         props.addSet({
             key: 'map-wrapper-map-set',
             data: {
                 backgroundLayer: osm,
-                layers: layers,
                 view: {
                     center: {
                         lat: 50,
@@ -53,9 +52,13 @@ class Presentation extends React.PureComponent {
         props.addMap({key: 'map-wrapper-map-1'});
         props.addMap({key: 'map-wrapper-map-2'});
         props.addMap({key: 'map-wrapper-map-3'});
+        props.addMap({key: 'map-wrapper-map-4'});
+        props.addMap({key: 'map-wrapper-map-5'});
         props.addMapToSet('map-wrapper-map-set', 'map-wrapper-map-1');
         props.addMapToSet('map-wrapper-map-set', 'map-wrapper-map-2');
         props.addMapToSet('map-wrapper-map-set', 'map-wrapper-map-3');
+        props.addMapToSet('map-wrapper-map-set', 'map-wrapper-map-4');
+        props.addMapToSet('map-wrapper-map-set', 'map-wrapper-map-5');
     }
 
     render() {
@@ -67,12 +70,14 @@ class Presentation extends React.PureComponent {
                         stateMapSetKey="map-wrapper-map-set"
                         mapComponent={ReactLeafletMap}
                         connectedMapComponent={ConnectedMap}
+                        wrapper
+                        // disableMapRemoval
                     >
                         <MapControls levelsBased zoomOnly/>
                     </ConnectedMapSet>
                 </div>
 
-                <h3>Unconrolled unconnected Map set</h3>
+                <h3>Unconrolled unconnected Map set - custom wrapper</h3>
                 <div style={{height: 260, margin: 10}}>
                     <MapSet
                         activeMapKey='map-2'

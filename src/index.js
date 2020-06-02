@@ -15,12 +15,10 @@ import MapWrapperPlayground from "./components/MapWrapperPlayground";
 const {store} = createStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/*<MapZoomBoxRangeRange/>*/}
     <Provider store={store}>
+        {/*<MapZoomBoxRangeRange/>*/}
         <MapWrapperPlayground/>
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 
