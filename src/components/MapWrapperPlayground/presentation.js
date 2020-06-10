@@ -5,6 +5,7 @@ import {connects} from "@gisatcz/ptr-state";
 import wrapper from "./CustomWrapper";
 
 import czGadm from "../../data/czGadm.json";
+import CustomWrapper from "./CustomWrapper";
 
 const ConnectedMap = connects.Map(PresentationMap);
 const ConnectedMapSet = connects.MapSet(MapSet);
@@ -70,7 +71,7 @@ class Presentation extends React.PureComponent {
                         stateMapSetKey="map-wrapper-map-set"
                         mapComponent={ReactLeafletMap}
                         connectedMapComponent={ConnectedMap}
-                        wrapper
+                        wrapper={CustomWrapper}
                         // disableMapRemoval
                     >
                         <MapControls levelsBased zoomOnly/>

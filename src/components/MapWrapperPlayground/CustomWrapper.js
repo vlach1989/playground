@@ -5,7 +5,7 @@ class CustomWrapper extends React.PureComponent {
         return (
             <div className="ptr-map-wrapper">
                 <div style={{background: 'white', position: 'absolute', bottom: 0, left: 0, zIndex: 2}}>
-                    {this.props.view && this.props.view.center.lat}
+                    {this.props.view && this.props.view.boxRange}
                 </div>
                 {this.props.children}
             </div>

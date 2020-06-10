@@ -11,13 +11,15 @@ import './index.scss';
 
 import MapZoomBoxRangeRange from "./components/MapZoomBoxRangeRange";
 import MapWrapperPlayground from "./components/MapWrapperPlayground";
+import MapView from "./components/MapView";
 
 const {store} = createStore();
 
 ReactDOM.render(
     <Provider store={store}>
         {/*<MapZoomBoxRangeRange/>*/}
-        <MapWrapperPlayground/>
+        {/*<MapWrapperPlayground/>*/}
+        <MapView/>
     </Provider>,
   document.getElementById('root')
 );
