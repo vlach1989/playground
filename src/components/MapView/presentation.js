@@ -7,7 +7,7 @@ const osm = {
     key: 'background-osm',
     type: 'wmts',
     options: {
-        url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
     }
 };
 
@@ -79,6 +79,13 @@ class Presentation extends React.PureComponent {
             <div className="ptr-light" style={{paddingLeft: 10}}>
                 <h2>Presentational components</h2>
                 <p>What's wrong with World wind in equal size & portrait view when zooming in at street level? :/</p>
+                <div style={{height: 400, width: 400, margin: 10}}>
+                    <ReactLeafletMap
+                        backgroundLayer={osm}
+                        view={{boxRange: 2000}}
+                        mapKey='leaflet-presentational'
+                    />
+                </div>
                 <div style={{display: 'flex'}}>
                     <div style={{height: 200, width: 200, margin: 10}}>
                         <PresentationMap
