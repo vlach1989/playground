@@ -104,6 +104,7 @@ class Presentation extends React.PureComponent {
                             wrapper={CustomWrapper}
                             view={{boxRange: 2000}}
                             mapComponent={WorldWindMap}
+                            levelsBased
                         >
                             <MapControls levelsBased zoomOnly/>
                         </PresentationMap>
