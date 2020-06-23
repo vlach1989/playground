@@ -13,8 +13,9 @@ import MapZoomBoxRangeRange from "./components/MapZoomBoxRangeRange";
 import MapWrapperPlayground from "./components/MapWrapperPlayground";
 import MapView from "./components/MapView";
 
-const {store} = createStore();
+import scripts from "./scripts";
 
+const {store} = createStore();
 ReactDOM.render(
     <Provider store={store}>
         {/*<MapZoomBoxRangeRange/>*/}
