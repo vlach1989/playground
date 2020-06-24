@@ -20,7 +20,8 @@ ReactDOM.render(
     <Provider store={store}>
         {/*<MapZoomBoxRangeRange/>*/}
         {/*<MapWrapperPlayground/>*/}
-        <MapView/>
+        {/*<MapView/>*/}
+        <div>Check console!</div>
     </Provider>,
   document.getElementById('root')
 );
