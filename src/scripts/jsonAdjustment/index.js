@@ -47,6 +47,10 @@ export function adjustGeoJson(json, outputName, options) {
             if (options.properties.update) {
                 feature.properties = updateProperties(feature.properties, options.properties.update);
             }
+
+            if (options.properties.changeKey) {
+                feature.properties = changeKey(feature.properties, options.properties.changeKey);
+            }
         }
 
         return feature;
@@ -68,6 +72,10 @@ function updatePropertiesRegexp(properties, update) {
             } else if (operations.integer) {
                 newProperties[key] = Math.round(value);
             } else if (operations.decimals) {
+                if (value === 0) {
+                    newProperties[key] = 0;
+                }
+
                 newProperties[key] = Math.round((value + Number.EPSILON) * Math.pow(10, operations.decimals)) / Math.pow(10, operations.decimals);
             } else {
                 newProperties[key] = value;
@@ -94,6 +102,20 @@ function updateProperties(properties, update) {
             } else {
                 newProperties[key] = value;
             }
+        } else {
+            newProperties[key] = value;
+        }
+    });
+
+    return newProperties;
+}
+
+function changeKey(properties, changes) {
+    let newProperties = {};
+    _.forIn(properties, (value, key) => {
+        const change = changes[key];
+        if (change) {
+            newProperties[change] = value;
         } else {
             newProperties[key] = value;
         }
