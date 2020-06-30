@@ -78,7 +78,7 @@ class Presentation extends React.PureComponent {
                     </ConnectedMapSet>
                 </div>
 
-                <h3>Unconrolled unconnected Map set - custom wrapper</h3>
+                <h3>Unconrolled unconnected Map set</h3>
                 <div style={{height: 260, margin: 10}}>
                     <MapSet
                         activeMapKey='map-2'
@@ -92,7 +92,7 @@ class Presentation extends React.PureComponent {
                         }}
                         backgroundLayer={osm}
                         wrapper
-                        wrapperOptions={{
+                        wrapperProps={{
                             onMapRemove: (mapKey)=>{window.alert(mapKey)},
                         }}
                     >
@@ -112,7 +112,7 @@ class Presentation extends React.PureComponent {
                     </MapSet>
                 </div>
 
-                <h3>PresentationMap component - wrapper, wrapperOptions as props</h3>
+                <h3>PresentationMap component - wrapper, wrapperProps as props</h3>
                 <div style={{height: 260, width: 500, margin: 10}}>
                     <HoverHandler
                         popupContentComponent={
@@ -124,7 +124,7 @@ class Presentation extends React.PureComponent {
                             name="Name from map"
                             mapKey="very special map key"
                             wrapper
-                            wrapperOptions={{
+                            wrapperProps={{
                                 title: "Mapička dlouhý název, předlouhý, tuze dlouhý, no, opravdu",
                                 onMapRemove: (mapKey)=>{window.alert(mapKey)},
                                 active: true

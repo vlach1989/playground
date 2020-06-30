@@ -19,7 +19,7 @@ const {store} = createStore();
 ReactDOM.render(
     <Provider store={store}>
         {/*<MapZoomBoxRangeRange/>*/}
-        {/*<MapWrapperPlayground/>*/}
+        <MapWrapperPlayground/>
         {/*<MapView/>*/}
         <div>Check console!</div>
     </Provider>,
