@@ -59,6 +59,12 @@ export function adjustGeoJson(json, outputName, options) {
     download(JSON.stringify(json), outputName + ".json", "text/plain");
 }
 
+export function adjustMultipleJsons(jsons, outputName, options) {
+    return jsons.map((json, i) => {
+       return adjustGeoJson(json, outputName+"_"+i, options);
+    });
+}
+
 function updatePropertiesRegexp(properties, update) {
     let fitProperties = _.pickBy(properties, (value, key) => update.regexp.test(key));
     let restProperties = _.omitBy(properties, (value, key) => update.regexp.test(key));

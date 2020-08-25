@@ -14,14 +14,16 @@ import MapWrapperPlayground from "./components/MapWrapperPlayground";
 import MapView from "./components/MapView";
 
 import scripts from "./scripts";
+import Test from "./components/Test";
 
 const {store} = createStore();
 ReactDOM.render(
     <Provider store={store}>
         {/*<MapZoomBoxRangeRange/>*/}
-        <MapWrapperPlayground/>
+        {/*<MapWrapperPlayground/>*/}
         {/*<MapView/>*/}
-        <div>Check console!</div>
+        {/*<div>Check console!</div>*/}
+        <Test/>
     </Provider>,
   document.getElementById('root')
 );
