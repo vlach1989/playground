@@ -2,8 +2,9 @@ import {adjustGeoJson} from "./jsonAdjustment";
 import jsonStatistics from "./jsonStatistics";
 
 // import riskZones from "./jsonAdjustment/riskZones.json";
-import vietnamRoads from "./jsonAdjustment/roads.json";
-import vietnamZones from "./jsonAdjustment/zones.json";
+// import vietnamRoads from "./jsonAdjustment/roads.json";
+// import mya_zones from "./jsonAdjustment/mya_zones.json";
+import crp_zones from "./jsonAdjustment/crp_zones.json";
 // import t41_orig from "./jsonAdjustment/t41_orig.json";
 // import t41 from "./jsonStatistics/t41.json";
 // import t143_1 from "./jsonAdjustment/t143/t143_1.json";
@@ -56,6 +57,39 @@ function run() {
     //         }
     //     }
     // });
+    
+    // Myanmar zones
+    // adjustGeoJson(mya_zones, 'zones', {
+    //     properties: {
+    //         update: {
+    //             "count": {integer: true, nullValue: 9999},
+    //             "km": {decimals: 2, nullValue: 9999},
+    //             "max": {decimals: 2, nullValue: 9999},
+    //             "mean": {decimals: 2, nullValue: 9999},
+    //             "median": {decimals: 2, nullValue: 9999},
+    //             "min": {decimals: 2, nullValue: 9999},
+    //             "p25": {decimals: 2, nullValue: 9999},
+    //             "p75": {decimals: 2, nullValue: 9999},
+    //             "p75_weight": {decimals: 2, nullValue: 9999},
+    //             "p75_dts": {decimals: 2},
+    //             "p75_dts_weighted": {decimals: 2},
+    //             "A": {nullValue: 9999, integer: true,},
+    //             "B": {nullValue: 9999, integer: true,},
+    //             "C": {nullValue: 9999, integer: true,},
+    //             "D": {nullValue: 9999, integer: true,},
+    //             "haz_0_10": {nullValue: 9999, integer: true,},
+    //             "haz_10_20": {nullValue: 9999, integer: true,},
+    //             "haz_20_30": {nullValue: 9999, integer: true,},
+    //             "haz_30_40": {nullValue: 9999, integer: true,},
+    //             "haz_40_50": {nullValue: 9999, integer: true,},
+    //             "haz_50_": {nullValue: 9999, integer: true,},
+    //             "susc_mean": {decimals: 2, nullValue: 9999},
+    //             "susc_m_rng": {decimals: 2, nullValue: 9999},
+    //             "susc_m_std": {decimals: 2, nullValue: 9999},
+    //             "susc_p83": {decimals: 2, nullValue: 9999}
+    //         }
+    //     }
+    // });
 
 
     // Vietnam roads
@@ -69,13 +103,13 @@ function run() {
     // });
 
     // Vietnam zones
-    // adjustGeoJson(vietnamZones, 'zones', {
-    //     properties: {
-    //         remove: {
-    //             list: ["shape_leng", "type", "shape_area", "hgt_bld", "img_before", "img_after"]
-    //         }
-    //     }
-    // });
+    adjustGeoJson(crp_zones, 'zones', {
+        properties: {
+            remove: {
+                list: ["shape_leng", "type", "shape_area", "hgt_bld", "img_before", "img_after","s1986_1990","s1991_1995","s1996_2000", "s2001_2005","s2006_2010","s2011_2015", "s1985", "max","2001-2005", "s_chng", "s_bu"]
+            }
+        }
+    });
 }
 
 export default run();

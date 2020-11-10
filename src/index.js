@@ -13,17 +13,19 @@ import MapZoomBoxRangeRange from "./components/MapZoomBoxRangeRange";
 import MapWrapperPlayground from "./components/MapWrapperPlayground";
 import MapView from "./components/MapView";
 
-import scripts from "./scripts";
+// import scripts from "./scripts";
 import Test from "./components/Test";
+import LeafletGlify from "./components/Leaflet";
 
 const {store} = createStore();
 ReactDOM.render(
     <Provider store={store}>
+		<LeafletGlify/>
         {/*<MapZoomBoxRangeRange/>*/}
         {/*<MapWrapperPlayground/>*/}
         {/*<MapView/>*/}
         {/*<div>Check console!</div>*/}
-        <Test/>
+        {/*<Test/>*/}
     </Provider>,
   document.getElementById('root')
 );
