@@ -1,0 +1,85 @@
+﻿{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [14.4042, 50.09722]
+			},
+			"properties": {
+				"id": "point-1",
+				"type": "metro",
+				"line": "A",
+				"name": "Hradčanská",
+				"description": ""
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [14.438525, 50.09965]
+			},
+			"properties": {
+				"id": "point-2",
+				"type": "metro",
+				"line": "C",
+				"name": "Vltavská",
+				"description": ""
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [14.42328, 50.1]
+			},
+			"properties": {
+				"id": "point-3",
+				"type": "tram",
+				"name": "Letenské náměstí",
+				"description": ""
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [14.4174, 50.09904]
+			},
+			"properties": {
+				"id": "point-parking-letna",
+				"type": "parking",
+				"name": "Parking Letná",
+				"description": ""
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [14.4259981, 50.0995436]
+			},
+			"properties": {
+				"id": "point-gisat",
+				"type": "gisat",
+				"name": "Gisat",
+				"description": "Budova ve dvoře :)"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [14.4259981, 50.0995436]
+			},
+			"properties": {
+				"id": "point-gisat-2",
+				"type": "cross",
+				"name": "Gisat",
+				"description": "Budova ve dvoře :)"
+			}
+		}
+	]
+}

@@ -17,15 +17,18 @@ import MapView from "./components/MapView";
 import Test from "./components/Test";
 import LeafletGlify from "./components/Leaflet";
 
+import ContactMap from "../src/components/ContactMap";
+
 const {store} = createStore();
 ReactDOM.render(
     <Provider store={store}>
-		<LeafletGlify/>
+		{/*<LeafletGlify/>*/}
         {/*<MapZoomBoxRangeRange/>*/}
         {/*<MapWrapperPlayground/>*/}
         {/*<MapView/>*/}
         {/*<div>Check console!</div>*/}
         {/*<Test/>*/}
+		<ContactMap />
     </Provider>,
   document.getElementById('root')
 );
